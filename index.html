@@ -1,113 +1,86 @@
 <!doctype html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="icon" href="assets/logo.png" type="image/x-icon">
-  <title>K — Klang Language</title>
-
-  <!-- Link pro CSS externo -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Klang Language — Minimal. Deterministic. Polyglot.</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/logo.png" type="image/png" />
 </head>
 
 <body>
-  <div class="site">
     <header class="site-header">
-      <div class="container header-inner">
-        <div class="logo" aria-hidden="false">
-          <img src="assets/logo.png" alt="Logomarca K">
-          <div class="brand-text">
-            <h1>K</h1>
-            <div class="sub">Klang Language</div>
-          </div>
-        </div>
+        <div class="container header-inner">
+            <div class="brand">
+                <img src="assets/logo.png" alt="Klang Logo" class="logo">
+                <div>
+                    <h1>Klang Language</h1>
+                    <span class="subtitle">Minimal • Determinística • Poliglota</span>
+                </div>
+            </div>
 
-        <nav class="primary" aria-label="Navegação principal">
-          <ul>
-            <li><a href="#" aria-current="page">Home</a></li>
-            <li><a href="#">Download</a></li>
-            <li><a href="#">Documentação</a></li>
-            <li><a href="#">Sobre</a></li>
-          </ul>
-        </nav>
-      </div>
+            <nav class="nav">
+                <a href="#" class="active">Home</a>
+                <a href="#">Download</a>
+                <a href="#">Documentação</a>
+                <a href="#">Sobre</a>
+            </nav>
+        </div>
     </header>
 
-    <main role="main">
-      <div class="container stack">
-        <!-- Hero / Slogan -->
-        <section class="card hero" id="inicio-slogan" aria-labelledby="titulo-k">
-          <h1 id="titulo-k">K — Klang Language</h1>
-          <p class="slogan"><strong>Slogan:</strong> Uma Sintaxe, Qualquer Sistema.</p>
+    <main class="container main-content">
+
+        <section class="hero card">
+            <h2>Uma linguagem feita para conectar ecossistemas.</h2>
+            <p class="lead">
+                Klang não tenta substituir linguagens — ela existe para conectá-las com
+                uma sintaxe clara, minimalista e totalmente determinística.
+            </p>
         </section>
 
-        <hr class="sep" />
-
-        <!-- Definição -->
-        <section class="card" id="definicao">
-          <h2>Definição</h2>
-          <p>
-            <strong>K</strong> (de <em>Klang Language</em>) é uma linguagem criada para conectar linguagens e
-            tornar a experiência de programar mais confortável e moderna.
-            Seu objetivo não é gritar, mas <em>ressoar</em> — trazer harmonia, clareza e fluidez
-            entre sistemas diferentes.
-          </p>
+        <section class="card">
+            <h3>Filosofia</h3>
+            <ul>
+                <li>Clareza acima de tudo.</li>
+                <li>Semântica determinística.</li>
+                <li>Transpilação modular e previsível.</li>
+                <li>Interoperabilidade real com Java, C, Go, Rust e Python.</li>
+            </ul>
         </section>
 
-        <hr class="sep" />
-
-        <!-- Essência -->
-        <section class="card" id="essencia">
-          <h2>Essência</h2>
-          <ul class="features">
-            <li>Conforto e harmonia na escrita de código</li>
-            <li>Interoperabilidade entre linguagens</li>
-            <li>Sintaxe clara e expressiva</li>
-          </ul>
+        <section class="card">
+            <h3>Exemplo de Sintaxe</h3>
+            <div class="code">
+<pre><code>@Use("java")
+public static integer sum(integer a, integer b) {
+    if (a > b) {
+        return a;
+    } otherwise (a == b) {
+        return 0;
+    } afterall {
+        return b;
+    }
+}</code></pre>
+            </div>
         </section>
 
-        <hr class="sep" />
-
-        <!-- Exemplo -->
-        <section class="card" id="exemplo">
-          <h2>Exemplo simples</h2>
-
-          <!-- bloco de código com spans para highlight manual -->
-          <div class="example code-highlight" role="region" aria-label="Exemplo de código">
-            <pre><code>
-<span class="annotation">@Use</span>(<span class="string">"java"</span>) <span class="comment">// Indica a linguagem a ser utilizada.</span>
-<span class="keyword">public</span> <span class="type">void</span> <span class="method">main</span>() { <span class="comment">// Método principal a ser chamado, o core do programa.</span>
-    <span class="function">println</span>(<span class="string">"Olá Mundo."</span>);
-}
-</code></pre>
-          </div>
-
-          <p class="note">Dica: deslize horizontalmente no mobile para ver linhas longas.</p>
+        <section class="card">
+            <h3>Por que Klang?</h3>
+            <p>
+                Klang oferece um modelo simples: você escreve em uma sintaxe única,
+                e transpila apenas o módulo desejado para o backend desejado. 
+                Isso mantém sistemas grandes **coerentes**, **claros** e **interoperáveis**.
+            </p>
         </section>
 
-        <hr class="sep" />
-
-        <!-- Encerramento -->
-        <section class="card" id="fim">
-          <p>
-            <strong>K</strong> vem de <strong>Klang</strong> — soa como <em>Clang</em>, mas é mais suave.
-            Uma linguagem feita para ressoar entre ideias, pessoas e sistemas.
-          </p>
-        </section>
-      </div>
+        <footer class="site-footer">
+            <p>&copy; <span id="ano"></span> — Klang Language (Apache-2.0)</p>
+        </footer>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p style="margin:0">&copy<span id="ano-atual"></span> | Licença MIT</p>
-        <p>(OBS: Isso é apenas a ideia de como seria o site da K, ela ainda está em desenvolvimento.></p>
-      </div>
-    </footer>
-
-    <script src="script.js">
-    </script>
+<script>
+    document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
 
 </body>
-
 </html>

@@ -1,316 +1,97 @@
-@font-face {
-  font-family: "Monolisa";
-  src: url("assets/fonts/Monolisa.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Caso tenha uma versão .ttf, use format("truetype") */
-/* ---------------------------
-   Tema: Klang (style.css)
-   Salve como style.css e vincule no HTML
-   --------------------------- */
-
-/* Google Fonts (opcional) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&family=Fira+Code:wght@400;700&display=swap');
-
 :root {
   --vinho: #7F001F;
-  --suave: #EFD8D2;
-  --neutro: #1C1C1C;
-  --bg: #0f1112;
-  --texto: #ECECEC;
-  --accent: #FFB4B4;
-  --container-max: 1100px;
-  --radius: 14px;
+  --bg: #0e0f11;
+  --text: #e8e8e8;
+  --subtle: #c9b9b9;
+  --radius: 10px;
+  --max: 1100px;
 }
 
-
-::selection {
-  color: var(--suave);
-  background-color: var(--vinho);
-}
-
-/* Reset mínimo */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
 body {
-  height: 100%;
   margin: 0;
-  background-color: var(--bg);
-  color: var(--texto);
-  font-family: "Monolisa", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Site layout */
-.site {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Header */
-.site-header {
-  background: linear-gradient(180deg, rgba(28, 28, 28, 1), rgba(20, 20, 20, 0.9));
-  padding: 18px 20px;
-  border-bottom: 1px solid rgba(127, 0, 31, 0.06);
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
 }
 
 .container {
   width: 100%;
-  max-width: var(--container-max);
+  max-width: var(--max);
   margin: 0 auto;
-  padding: 0 18px;
+  padding: 0 16px;
+}
+
+.site-header {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 0;
+  background: #121212;
 }
 
 .header-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo img {
-  height: 100px;
-  width: auto;
-  padding-left: 0px;
-  display: block;
+  height: 64px;
   border-radius: 8px;
 }
 
-.logo .brand-text h1 {
-  margin: 0;
-  font-size: 18px;
-  letter-spacing: 0.6px;
-}
-
-.logo .sub {
+.subtitle {
+  color: var(--subtle);
   font-size: 12px;
-  color: var(--suave);
-  margin-top: 2px;
 }
 
-/* Nav */
-nav.primary ul {
-  display: flex;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  align-items: center;
-}
-
-nav.primary a {
+.nav a {
   color: var(--vinho);
   text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 8px;
+  margin-left: 14px;
   font-weight: 600;
-  transition: background .15s, transform .08s;
 }
 
-nav.primary a:focus,
-nav.primary a:hover {
-  background: rgba(127, 0, 31, 0.06);
-  transform: translateY(-1px);
-  outline: none;
+.nav a.active,
+.nav a:hover {
+  text-decoration: underline;
 }
 
-/* Main content */
-main[role="main"] {
-  flex: 1;
-  padding: 28px 0;
-}
-
-.stack {
+.main-content {
+  padding: 32px 0;
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  align-items: center;
+  gap: 22px;
 }
 
 .card {
-  width: 100%;
-  max-width: 900px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(0, 0, 0, 0.04));
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: #161616;
   border-radius: var(--radius);
   padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255,255,255,0.04);
 }
 
-.hero {
-  text-align: center;
+.lead {
+  color: var(--subtle);
+  font-size: 16px;
 }
 
-.hero h1 {
-  margin: 0 0 8px 0;
-  font-size: 26px;
-}
-
-.slogan {
-  margin: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* Headings and text */
-section h2 {
-  margin: 0 0 12px 0;
-  font-size: 18px;
-  color: var(--vinho);
-}
-
-p {
-  color: #dcdcdc;
-  line-height: 1.6;
-}
-
-ul.features {
-  list-style: disc;
-  padding-left: 20px;
-  margin: 0;
-  color: #e8e8e8;
-}
-
-/* Separador estilizado */
-hr.sep {
-  border: none;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--vinho), transparent);
-  width: 100%;
-  margin: 8px 0 8px 0;
-  opacity: .85;
-}
-
-/* Código / highlight manual */
-.example {
-  margin-top: 8px;
-}
-
-.code-highlight {
-  background-color: #1C1C1C;
-  border-radius: 12px;
-  padding: 16px;
-  font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #EFD8D2;
-
-  /* Essencial para mobile: rolagem quando necessário */
-  white-space: pre;
+.code {
+  background: #1c1c1c;
+  padding: 14px;
+  border-radius: var(--radius);
   overflow-x: auto;
-  max-width: 100%;
-  word-wrap: normal;
-
-  border: 1px solid rgba(127, 0, 31, 0.06);
-  box-shadow: 0 0 15px rgba(127, 0, 31, 0.12);
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
 }
 
-/* Scrollbar estilizada (webkit) */
-.code-highlight::-webkit-scrollbar {
-  height: 8px;
-}
-
-.code-highlight::-webkit-scrollbar-thumb {
-  background-color: var(--vinho);
-  border-radius: 10px;
-}
-
-.code-highlight::-webkit-scrollbar-track {
-  background: #101010;
-}
-
-/* Tokens — ajuste conforme sua preferência */
-.code-highlight .annotation {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.code-highlight .string {
-  color: #FF8FA3;
-}
-
-.code-highlight .keyword {
-  color: #7F001F;
-  font-weight: 700;
-}
-
-/* vinho para keywords/tipos */
-.code-highlight .type {
-  color: #7F001F;
-  font-weight: 700;
-}
-
-/* vinho pra tipos também */
-.code-highlight .method {
-  color: #B47C7C;
-}
-
-/* nomes de métodos */
-.code-highlight .function {
-  color: #FF7B7B;
-}
-
-/* funções / chamados */
-.code-highlight .comment {
-  color: #5C5C5C;
-  font-style: italic;
-}
-
-/* Nota pequena */
-.note {
-  margin-top: 8px;
-  color: #9c9c9c;
-  font-size: 13px;
-}
-
-/* Footer */
 .site-footer {
-  background: var(--neutro);
-  color: var(--vinho);
-  padding: 12px 0;
   text-align: center;
-}
-
-/* Responsividade */
-@media (max-width: 760px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-
-  nav.primary ul {
-    justify-content: center;
-  }
-
-  .hero h1 {
-    font-size: 20px;
-  }
-
-  .card {
-    padding: 16px;
-  }
-
-  .logo img {
-    height: 48px;
-  }
-
-  .container {
-    padding: 0 12px;
-  }
+  padding: 20px 0;
+  color: var(--subtle);
+  margin-top: 40px;
 }
